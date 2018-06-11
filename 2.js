@@ -18,15 +18,15 @@ const decodeString = s => {
         retStr += str[k];
         k++;
       } else {
-        let num = 0;
+        let num = 0, currentStr = '';
 
-        while (k < str.length && !isNaN(str[k])) {
+        while (!isNaN(str[k]) && k < str.length) {
           num = num * 10 + parseInt(str[k]);
           k++;
         }
 
         k++;
-        let currentStr = decode(str);
+        currentStr = decode(str);
         k++;
 
         while (num > 0) {
